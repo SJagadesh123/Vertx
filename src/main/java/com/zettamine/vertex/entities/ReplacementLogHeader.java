@@ -19,10 +19,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+<<<<<<< HEAD
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+=======
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+>>>>>>> cb2b2fd126e14bef1231e29bedf172bf336290c0
 @Entity
 @Table(name = "REPL_LOG_H")
 public class ReplacementLogHeader {
@@ -36,12 +43,12 @@ public class ReplacementLogHeader {
     private Equipment equipment;
 
     @Column(name = "repl_trigger")
-    private String replacementTrigger;
+    private String replTrigger;
 
     @Column(name = "repl_log_cl_dt")
-    private LocalDate replacementLogClosingDate;
+    private LocalDate replLogClosingDate;
     
     @OneToMany(mappedBy = "repLogH", cascade = CascadeType.ALL)
-    private List<ReplacementLogItem> replacementLogItem;
+    private List<ReplacementLogItem> replLogItem;
 }
 
