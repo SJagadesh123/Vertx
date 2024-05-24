@@ -13,28 +13,34 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "REPL_LOG_H")
 public class ReplacementLogHeader {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "log_id")
-    private Integer logId;
 
-    @OneToOne
-    @JoinColumn(name = "eqpt_id")
-    private Integer equipmentId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "log_id")
+	private Integer logId;
 
-    @Column(name = "repl_trigger")
-    private String replacementTrigger;
+	@OneToOne
+	@JoinColumn(name = "eqpt_id")
+	private Equipment equipment;
 
-    @Column(name = "repl_log_cl_dt")
-    private LocalDate replacementLogClosingDate;
-    
-    @OneToMany(mappedBy = "repLogH", cascade = CascadeType.ALL)
-    private List<ReplacementLogItem> replacementLogItem;
+	@Column(name = "repl_trigger")
+	private String replTrigger;
+
+	@Column(name = "repl_log_cl_dt")
+	private LocalDate replLogClosingDate;
+
+	@OneToMany(mappedBy = "repLogH", cascade = CascadeType.ALL)
+	private List<ReplacementLogItem> replLogItem;
 }
-
