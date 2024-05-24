@@ -18,7 +18,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "spare_part")
+@Table(name = "spare_supplier_part")
 @IdClass(SparesSupplierPartsId.class)
 public class SparesSupplierParts {
 	
