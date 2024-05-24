@@ -32,7 +32,7 @@ public class MaintenanceTask extends BaseEntity {
 	private String taskName;
 	
 	@ManyToOne
-	@JoinColumn(name = "eqp_typ_id")
+	@JoinColumn(name = "eqp_typ_id", nullable = false)
 	private EquipmentType eqptType;
 	
 	@ManyToOne
