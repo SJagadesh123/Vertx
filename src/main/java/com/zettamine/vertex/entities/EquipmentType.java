@@ -48,10 +48,10 @@ public class EquipmentType extends BaseEntity {
 	@JoinColumn(name = "catg_id", nullable = false)
 	private EquipmentCategory eqptCatg;
 	
-    @OneToMany(mappedBy = "equipmentType", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "eqptType", cascade = CascadeType.ALL)
 	private List<EquipmentVarient> eqptVars; 
     
-    @OneToMany(mappedBy = "equipmentType", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "eqptType", cascade = CascadeType.ALL)
     private List<Equipment> equipments;
 	
 	
