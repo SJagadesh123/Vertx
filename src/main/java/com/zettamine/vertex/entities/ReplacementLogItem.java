@@ -1,4 +1,5 @@
 package com.zettamine.vertex.entities;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -29,10 +30,10 @@ public class ReplacementLogItem {
     @JoinColumn(name = "log_id", nullable = false)
     private ReplacementLogHeader replLogHeader;
 
-    @Id
-    @ManyToOne
-    @JoinColumn(name = "part_id")
-    private SparePart sparePart;
+//    @Id
+//    @ManyToOne
+//    @JoinColumn(name = "part_id")
+//    private SparePart sparePart;
 
     @Column(name = "repl_dt")
     private LocalDate replDate;
