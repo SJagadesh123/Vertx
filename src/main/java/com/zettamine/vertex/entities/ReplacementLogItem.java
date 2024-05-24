@@ -14,12 +14,7 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
-<<<<<<< HEAD
-import lombok.Setter;
 
-
-
-=======
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -27,20 +22,13 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
->>>>>>> cb2b2fd126e14bef1231e29bedf172bf336290c0
 @Entity
-@Setter
-@Getter
 @Table(name = "ReplacementLogDetail")
 @IdClass(ReplacementLogItemlId.class)
 public class ReplacementLogItem {
     @Id
     @ManyToOne
-<<<<<<< HEAD
     @JoinColumn(name = "log_id", nullable = false)
-=======
-    @JoinColumn(name = "log_id")
->>>>>>> cb2b2fd126e14bef1231e29bedf172bf336290c0
     private ReplacementLogHeader replLogHeader;
 
     @Id
@@ -62,9 +50,4 @@ public class ReplacementLogItem {
 
     @Column(name = "tech_id")
     private Integer technicianId;
-<<<<<<< HEAD
-    
-    
-=======
->>>>>>> cb2b2fd126e14bef1231e29bedf172bf336290c0
 }
