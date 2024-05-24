@@ -27,18 +27,15 @@ public class SparesPurchaseHistory extends BaseEntity{
 	private Integer purId;
 	
 	@ManyToOne
-	@MapsId("partId")
-	@JoinColumn(name = "part_id", nullable = false, insertable = false, updatable = false)
+	@JoinColumn(name = "part_id", nullable = false)
 	private SparePart sparePart;
 	
 	@ManyToOne
-	@MapsId("oemId")
-	@JoinColumn(name = "oem_id", nullable = false, insertable = false, updatable = false)
+	@JoinColumn(name = "oem_id", nullable = false)
 	private OEM oem;
 	
 	@ManyToOne
-	@MapsId("supplierId")
-	@JoinColumn(name = "supplier_id", nullable = false, insertable = false, updatable = false)
+	@JoinColumn(name = "supplier_id", nullable = false)
 	private SparesSupplier sparesSupplier;
 	
 	@Column(name = "invoice_id",nullable = false)
