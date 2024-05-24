@@ -19,14 +19,15 @@ import lombok.Data;
 @Entity
 @Table(name = "REPL_LOG_H")
 public class ReplacementLogHeader {
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "log_id")
-    private int logId;
+    private Integer logId;
 
     @OneToOne
     @JoinColumn(name = "eqpt_id")
-    private int equipmentId;
+    private Integer equipmentId;
 
     @Column(name = "repl_trigger")
     private String replacementTrigger;
