@@ -35,7 +35,7 @@ public class EquipmentCategory extends BaseEntity {
 	@Column(name = "notes", length = 150)
 	private String notes;
 	
-    @OneToMany(mappedBy = "eqptCatg", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "equipmentCategory", cascade = CascadeType.ALL)
 	private List<EquipmentType> eqptTyps; 
 
 	
