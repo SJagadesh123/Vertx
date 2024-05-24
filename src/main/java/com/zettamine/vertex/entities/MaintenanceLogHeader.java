@@ -11,13 +11,17 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "MNTC_LOG_H")
 @Setter
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class MaintenanceLogHeader extends BaseEntity {
 
     @Id
@@ -50,7 +54,7 @@ public class MaintenanceLogHeader extends BaseEntity {
     @Column(name = "mntc_inv_doc")
     private String mntcInvDoc;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "repl_log_id", nullable = false)
     private ReplacementLogHeader replacementLogHeader;
 
