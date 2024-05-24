@@ -13,20 +13,27 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "REPL_LOG_H")
 public class ReplacementLogHeader {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "log_id")
-    private int logId;
+    private Integer logId;
 
     @OneToOne
     @JoinColumn(name = "eqpt_id")
-    private int equipmentId;
+    private Equipment equipment;
 
     @Column(name = "repl_trigger")
     private String replacementTrigger;

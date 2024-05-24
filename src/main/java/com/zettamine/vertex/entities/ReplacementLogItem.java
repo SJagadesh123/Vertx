@@ -3,8 +3,6 @@ package com.zettamine.vertex.entities;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import javax.persistence.*;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -13,16 +11,21 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+
+
 @Entity
+@Setter
+@Getter
 @Table(name = "ReplacementLogDetail")
-@IdClass(ReplacementLogDetailId.class)
+@IdClass(ReplacementLogItemlId.class)
 public class ReplacementLogItem {
     @Id
     @ManyToOne
-    @JoinColumn(name = "log_id")
-    private ReplacementLogHeader replacementLogHeader;
+    @JoinColumn(name = "log_id", nullable = false)
+    private ReplacementLogHeader replLogHeader;
 
     @Id
     @ManyToOne
@@ -33,14 +36,16 @@ public class ReplacementLogItem {
     private LocalDate replacementDate;
 
     @Column(name = "qty")
-    private int quantity;
+    private Integer quantity;
 
     @Column(name = "unit_cost")
-    private BigDecimal unitCost;
+    private Double unitCost;
 
     @Column(name = "repl_notes")
     private String replacementNotes;
 
     @Column(name = "tech_id")
-    private int technicianId;
+    private Integer technicianId;
+    
+    
 }
