@@ -18,6 +18,7 @@ import lombok.Setter;
 public class OEM extends BaseEntity {
 
 	@Id
+	@Column(name = "oem_id")
 	private String oemId;
 
 	@Column(name = "oem_name", nullable = false, unique = true)

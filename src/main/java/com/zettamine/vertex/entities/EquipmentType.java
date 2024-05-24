@@ -22,6 +22,7 @@ import lombok.Setter;
 public class EquipmentType extends BaseEntity {
 
 	@Id
+	@Column(name="typ_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer typeId;
 
@@ -38,7 +39,7 @@ public class EquipmentType extends BaseEntity {
 	private String notes;
 
 	@ManyToOne
-	@JoinColumn(name = "eqpt_catg_id", nullable = false)
+	@JoinColumn(name = "catg_id", nullable = false)
 	private EquipmentCategory eqptCatg;
 
 	

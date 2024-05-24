@@ -26,6 +26,7 @@ import lombok.Setter;
 public class EquipmentCategory extends BaseEntity {
 
 	@Id
+	@Column(name = "catg_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer catgId;
 
