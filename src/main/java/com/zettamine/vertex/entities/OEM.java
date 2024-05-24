@@ -1,8 +1,12 @@
 package com.zettamine.vertex.entities;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,5 +27,14 @@ public class OEM extends BaseEntity {
 
 	@Column(name = "oem_name", nullable = false, unique = true)
 	private String oemName;
+	
+
+	@OneToMany(mappedBy = "oem",cascade = CascadeType.ALL,orphanRemoval = true)
+	private List<SparesPurchaseHistory> sparesPurchaseHistory;
+
+	@OneToMany(mappedBy = "oem", cascade = CascadeType.ALL)
+    private List<Equipment> equipments;
+
+
 
 }

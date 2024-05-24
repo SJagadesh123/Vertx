@@ -12,13 +12,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MaintenanceLogItemId implements Serializable {
-	
-	private MaintenanceLogHeader maintenanceHeaderLog;
+
+	private MaintenanceLogHeader maintenanceLogHeader;
 	private MaintenanceTask maintenanceTask;
-	
-	
-	
-	
-	
 
 }

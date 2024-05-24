@@ -15,24 +15,26 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
 @Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "EQPT_VEND")
-public class EquipmentVendor extends BaseEntity {
-
-	@Id
-	@Column(name = "vend_id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer vendId;
-
-	@Column(name = "vend_reg_name", nullable = false, unique = true)
-	private String vendRegName;
-
-	@OneToMany(mappedBy = "eqptVend", cascade = CascadeType.ALL)
-    private List<Equipment> equipments;
-
+@Table(name = "spares_supplier")
+public class SparesSupplier extends BaseEntity{
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "supplier_id")
+	private Integer supplierId;
+	
+	@Column(name = "supplier_name",nullable = false,unique = true)
+	private String supplierName;
+	
+	@OneToMany(mappedBy = "sparesSupplier",cascade = CascadeType.ALL)
+	private List<SparesSupplierParts> sparesSupplierParts;
+	
+	@OneToMany(mappedBy = "sparesSupplier",cascade = CascadeType.ALL)
+	private List<SparesPurchaseHistory> sparesPurchaseHistory;
+
 }
