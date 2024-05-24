@@ -1,6 +1,8 @@
 package com.zettamine.vertex.entities;
 
 
+import java.util.List;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,11 +28,13 @@ import lombok.Setter;
 public class EquipmentVarient extends BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "var_id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "var_seq")
+	@SequenceGenerator(name = "var_seq", sequenceName = "eqp_var_seq", allocationSize = 1, initialValue = 10001)
     private Integer varId;
 
     @ManyToOne
-    @JoinColumn(name = "eqpt_typ_id", nullable = false)
+    @JoinColumn(name = "typ_id", nullable = false)
     private EquipmentType eqptType;
 
     @Column(name = "var_name", nullable = false, unique = true)
@@ -37,6 +42,9 @@ public class EquipmentVarient extends BaseEntity {
 
     @Column(name = "notes", length = 300)
     private String notes;
+    
+    @OneToMany(mappedBy = "equipmentVarient", cascade = CascadeType.ALL)
+    private List<Equipment> equipments;
 
   
 }
