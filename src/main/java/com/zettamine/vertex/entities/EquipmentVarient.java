@@ -12,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,7 +29,8 @@ public class EquipmentVarient extends BaseEntity {
 
     @Id
     @Column(name = "var_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "var_seq")
+	@SequenceGenerator(name = "var_seq", sequenceName = "eqp_var_seq", allocationSize = 1, initialValue = 10001)
     private Integer varId;
 
     @ManyToOne
