@@ -21,11 +21,10 @@ import lombok.Setter;
 @IdClass(MaintenanceLogItem.class)
 public class MaintenanceLogItem extends BaseEntity {
 	
+
 	@Id
 	@ManyToOne
 	@JoinColumn(name = "log_id", nullable = false)
-	private MaintenanceLogHeader maintenanceHeaderLog;
-
 	private MaintenanceLogHeader maintenanceLogHeader;
 
 	@Id

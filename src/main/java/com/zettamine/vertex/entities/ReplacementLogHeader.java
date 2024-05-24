@@ -41,6 +41,8 @@ public class ReplacementLogHeader {
 	@Column(name = "repl_log_cl_dt")
 	private LocalDate replLogClosingDate;
 
-	@OneToMany(mappedBy = "repLogH", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "replLogHeader", cascade = CascadeType.ALL)
 	private List<ReplacementLogItem> replLogItem;
+	
+
 }
