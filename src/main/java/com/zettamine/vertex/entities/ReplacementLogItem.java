@@ -25,28 +25,28 @@ import lombok.Setter;
 @Table(name = "ReplacementLogDetail")
 @IdClass(ReplacementLogItemlId.class)
 public class ReplacementLogItem {
-    @Id
-    @ManyToOne
-    @JoinColumn(name = "log_id", nullable = false)
-    private ReplacementLogHeader replLogHeader;
+	@Id
+	@ManyToOne
+	@JoinColumn(name = "log_id", nullable = false)
+	private ReplacementLogHeader replLogHeader;
 
-//    @Id
-//    @ManyToOne
-//    @JoinColumn(name = "part_id")
-//    private SparePart sparePart;
+	@Id
+	@ManyToOne
+	@JoinColumn(name = "part_id")
+	private SparePart sparePart;
 
-    @Column(name = "repl_dt")
-    private LocalDate replDate;
+	@Column(name = "repl_dt")
+	private LocalDate replDate;
 
-    @Column(name = "qty")
-    private Integer quantity;
+	@Column(name = "qty")
+	private Integer quantity;
 
-    @Column(name = "unit_cost")
-    private Double unitCost;
+	@Column(name = "unit_cost")
+	private Double unitCost;
 
-    @Column(name = "repl_notes")
-    private String replNotes;
+	@Column(name = "repl_notes")
+	private String replNotes;
 
-    @Column(name = "tech_id")
-    private Integer technicianId;
+	@Column(name = "tech_id")
+	private Integer technicianId;
 }
