@@ -1,6 +1,8 @@
 package com.zettamine.vertex.entities;
 
 
+import java.util.List;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -38,6 +40,9 @@ public class EquipmentVarient extends BaseEntity {
 
     @Column(name = "notes", length = 300)
     private String notes;
+    
+    @OneToMany(mappedBy = "equipmentVarient", cascade = CascadeType.ALL)
+    private List<Equipment> equipments;
 
   
 }

@@ -27,5 +27,5 @@ public class EquipmentVendor extends BaseEntity {
 	@Column(name = "vend_reg_name", nullable = false, unique = true)
 	private String vendRegName;
 
-	// getters and setters
+	
 }
