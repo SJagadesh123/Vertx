@@ -36,11 +36,11 @@ public class ReplacementLogItem {
     private int quantity;
 
     @Column(name = "unit_cost")
-    private BigDecimal unitCost;
+    private Double unitCost;
 
     @Column(name = "repl_notes")
     private String replacementNotes;
 
     @Column(name = "tech_id")
-    private int technicianId;
+    private Integer technicianId;
 }
