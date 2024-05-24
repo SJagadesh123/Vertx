@@ -1,10 +1,7 @@
 package com.zettamine.vertex.entities;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
-
-import javax.persistence.*;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,6 +13,7 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
+
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -25,17 +23,17 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "ReplacementLogDetail")
-@IdClass(ReplacementLogDetailId.class)
+@IdClass(ReplacementLogItemlId.class)
 public class ReplacementLogItem {
     @Id
     @ManyToOne
-    @JoinColumn(name = "log_id")
+    @JoinColumn(name = "log_id", nullable = false)
     private ReplacementLogHeader replLogHeader;
 
-    @Id
-    @ManyToOne
-    @JoinColumn(name = "part_id")
-    private SparePart sparePart;
+//    @Id
+//    @ManyToOne
+//    @JoinColumn(name = "part_id")
+//    private SparePart sparePart;
 
     @Column(name = "repl_dt")
     private LocalDate replDate;
