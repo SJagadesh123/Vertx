@@ -4,13 +4,18 @@ import java.io.Serializable;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
-public class SparesSupplierPartsId implements Serializable{
+@Getter
+@Setter
+public class SparesSupplierPartsId implements Serializable {
+	
+	
 	private static final long serialVersionUID = 1L;
-	private Long sparePart;
-	private Long supplier;
+	private Integer sparePart;
+	private Integer sparesSupplier;
 }

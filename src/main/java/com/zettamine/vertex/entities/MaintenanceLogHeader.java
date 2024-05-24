@@ -1,7 +1,7 @@
 package com.zettamine.vertex.entities;
 
 import java.time.LocalDate;
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,40 +20,40 @@ import lombok.Setter;
 @Getter
 public class MaintenanceLogHeader extends BaseEntity {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "log_id")
-	private Integer logId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "log_id")
+    private Integer logId;
 
-	@ManyToOne
-	@JoinColumn(name = "eqpt_id", nullable = false)
-	private Equipment equipment;
+    @ManyToOne
+    @JoinColumn(name = "eqpt_id", nullable = false)
+    private Equipment equipment;
 
-	@Column(name = "start_dt")
-	private LocalDate startDt;
+    @Column(name = "start_dt")
+    private LocalDate startDt;
 
-	@Column(name = "closure_dt")
-	private LocalDate closureDt;
+    @Column(name = "closure_dt")
+    private LocalDate closureDt;
 
-	@Column(name = "closed_by")
-	private String closedBy;
+    @Column(name = "closed_by")
+    private String closedBy;
 
-	@Column(name = "next_due_dt")
-	private LocalDate nextDueDt;
+    @Column(name = "next_due_dt")
+    private LocalDate nextDueDt;
 
-	@Column(name = "log_notes")
-	private String logNotes;
+    @Column(name = "log_notes")
+    private String logNotes;
 
-	@Column(name = "mntc_metho")
-	private String mntcMethod;
+    @Column(name = "mntc_metho")
+    private String mntcMethod;
 
-	@Column(name = "mntc_inv_doc")
-	private String mntcInvDoc;
+    @Column(name = "mntc_inv_doc")
+    private String mntcInvDoc;
 
-	@OneToOne
-	@JoinColumn(name = "repl_log_id", nullable = false)
-	private ReplacementLogHeader replacementLogId;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "repl_log_id", nullable = false)
+    private ReplacementLogHeader replacementLogHeader;
 
-	@Column(name = "status", nullable = false)
-	private String status;
+    @Column(name = "status", nullable = false)
+    private String status;
 }
