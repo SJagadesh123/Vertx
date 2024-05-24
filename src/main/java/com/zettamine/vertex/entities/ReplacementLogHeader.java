@@ -33,7 +33,7 @@ public class ReplacementLogHeader {
 
     @OneToOne
     @JoinColumn(name = "eqpt_id")
-    private Integer equipmentId;
+    private Equipment equipment;
 
     @Column(name = "repl_trigger")
     private String replTrigger;
