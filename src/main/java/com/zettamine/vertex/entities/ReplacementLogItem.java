@@ -41,7 +41,7 @@ public class ReplacementLogItem {
     private LocalDate replDate;
 
     @Column(name = "qty")
-    private int quantity;
+    private Integer quantity;
 
     @Column(name = "unit_cost")
     private Double unitCost;
