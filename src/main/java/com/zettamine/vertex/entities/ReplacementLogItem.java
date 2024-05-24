@@ -25,6 +25,7 @@ import lombok.Setter;
 @Table(name = "ReplacementLogDetail")
 @IdClass(ReplacementLogItemlId.class)
 public class ReplacementLogItem {
+	
 	@Id
 	@ManyToOne
 	@JoinColumn(name = "log_id", nullable = false)

@@ -22,22 +22,15 @@ import lombok.Setter;
 @IdClass(SparesSupplierPartsId.class)
 public class SparesSupplierParts {
 	
-	@Id
-	@Column(name = "part_id")
-	private Long partId;
 	
 	@Id
-	@Column(name = "supplier_id")
-	private Long supplierId;
-	
 	@ManyToOne
-	@MapsId("partId")
-	@JoinColumn(name = "part_id", nullable = false, insertable = false, updatable = false)
+	@JoinColumn(name = "part_id", nullable = false)
 	private SparePart sparePart;
 	
+	@Id
 	@ManyToOne
-	@MapsId("supplierId")
-	@JoinColumn(name = "supplier_id", nullable = false, insertable = false, updatable = false)
+	@JoinColumn(name = "supplier_id", nullable = false)
 	private SparesSupplier sparesSupplier;
 	
 	@Column(name = "lead_time")
