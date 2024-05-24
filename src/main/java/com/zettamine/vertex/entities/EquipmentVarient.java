@@ -43,7 +43,7 @@ public class EquipmentVarient extends BaseEntity {
     @Column(name = "notes", length = 300)
     private String notes;
     
-    @OneToMany(mappedBy = "equipmentVarient", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "eqptVar", cascade = CascadeType.ALL)
     private List<Equipment> equipments;
 
   
