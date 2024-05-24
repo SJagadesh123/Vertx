@@ -25,11 +25,12 @@ import lombok.Setter;
 public class EquipmentVarient extends BaseEntity {
 
     @Id
+    @Column(name = "var_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer varId;
 
     @ManyToOne
-    @JoinColumn(name = "eqpt_typ_id", nullable = false)
+    @JoinColumn(name = "typ_id", nullable = false)
     private EquipmentType eqptType;
 
     @Column(name = "var_name", nullable = false, unique = true)

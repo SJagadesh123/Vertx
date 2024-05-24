@@ -20,6 +20,7 @@ import lombok.Setter;
 public class EquipmentVendor extends BaseEntity {
 
 	@Id
+	@Column(name = "vend_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer vendId;
 
