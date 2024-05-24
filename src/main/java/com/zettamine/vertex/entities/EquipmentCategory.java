@@ -11,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,7 +27,9 @@ import lombok.Setter;
 public class EquipmentCategory extends BaseEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "catg_id")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "catg_seq")
+	@SequenceGenerator(name = "catg_seq", sequenceName = "eqp_catg_seq", allocationSize = 1, initialValue = 101)
 	private Integer catgId;
 
 	@Column(name = "catg_name", nullable = false, unique = true)
@@ -35,7 +38,7 @@ public class EquipmentCategory extends BaseEntity {
 	@Column(name = "notes", length = 150)
 	private String notes;
 	
-    @OneToMany(mappedBy = "eqptCatg", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "equipmentCategory", cascade = CascadeType.ALL)
 	private List<EquipmentType> eqptTyps; 
 
 	
