@@ -24,7 +24,7 @@ public class MaintenanceLogItem extends BaseEntity {
 	@Id
 	@ManyToOne
 	@JoinColumn(name = "log_id", nullable = false)
-	private MaintenanceHeaderLog maintenanceHeaderLog;
+	private MaintenanceLogHeader maintenanceLogHeader;
 	
 	@Id
 	@ManyToOne

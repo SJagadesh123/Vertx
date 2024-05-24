@@ -31,4 +31,8 @@ public class OEM extends BaseEntity {
 	@OneToMany(mappedBy = "oem",cascade = CascadeType.ALL,orphanRemoval = true)
 	private List<SparesPurchaseHistory> sparesPurchaseHistory;
 
+	@OneToMany(mappedBy = "oem", cascade = CascadeType.ALL)
+    private List<Equipment> equipments;
+
+
 }
