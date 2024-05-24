@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +23,8 @@ import lombok.Setter;
 public class EquipmentType extends BaseEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "eqpt_type_seq")
+	@SequenceGenerator(name = "eqpt_type_seq", sequenceName = "eqpt_type_sequence", allocationSize = 1, initialValue = 1001)
 	private Integer typeId;
 
 	@Column(name = "typ_name", nullable = false, unique = true)
@@ -41,5 +43,4 @@ public class EquipmentType extends BaseEntity {
 	@JoinColumn(name = "eqpt_catg_id", nullable = false)
 	private EquipmentCategory eqptCatg;
 
-	
 }
