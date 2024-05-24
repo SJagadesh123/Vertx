@@ -1,9 +1,6 @@
 package com.zettamine.vertex.entities;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
-
-import javax.persistence.*;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,16 +21,16 @@ public class ReplacementLogItem {
     @JoinColumn(name = "log_id")
     private ReplacementLogHeader replacementLogHeader;
 
-    @Id
-    @ManyToOne
-    @JoinColumn(name = "part_id")
-    private SparePart sparePart;
+//    @Id
+//    @ManyToOne
+//    @JoinColumn(name = "part_id")
+//    private SparePart sparePart;
 
     @Column(name = "repl_dt")
     private LocalDate replacementDate;
 
     @Column(name = "qty")
-    private int quantity;
+    private Integer quantity;
 
     @Column(name = "unit_cost")
     private Double unitCost;
